@@ -1,24 +1,6 @@
-# README
+## Productstacker data modeling
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `User` - The model responsible for a given entity who might add and share supplment stacks.
+- `Stack` - A collection of products a user can share.
+- `Product` - Get's shared inside a Stack. Has richer data like price, description, title, etc.
+- `Brand` - The brand of the product. One brand per product.
