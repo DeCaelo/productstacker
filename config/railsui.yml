@@ -1,0 +1,5 @@
+--- !ruby/object:Railsui::Configuration
+application_name: Productstacker
+support_email: support@productstacker.com
+css_framework: tailwind
+theme: hound
