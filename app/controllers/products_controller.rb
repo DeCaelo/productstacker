@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = @stack.products.new(product_params)
 
     if @product.save
       redirect_to stack_product_url(@stack, @product), notice: "Product was successfully created."
