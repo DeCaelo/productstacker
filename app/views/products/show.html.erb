@@ -20,5 +20,6 @@
       <%= link_to "Edit", edit_stack_product_path(@stack, @product), class: "btn btn-light" %>
     </div>
   </div>
+  <%= ProductParser::Amazon.get_attributes(@product.link) %>
   <%= render @product %>
 </div>
