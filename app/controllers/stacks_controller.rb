@@ -42,11 +42,11 @@ class StacksController < ApplicationController
   end
 
   private
-    def set_stack
-      @stack = Stack.find(params[:id])
-    end
+  def set_stack
+    @stack = Stack.find_by(share_link: params[:share_link]) || Stack.find_by(id: params[:share_link])
+  end
 
-    def stack_params
-      params.require(:stack).permit(:title, :share_link)
-    end
+  def stack_params
+    params.require(:stack).permit(:title)
+  end
 end
