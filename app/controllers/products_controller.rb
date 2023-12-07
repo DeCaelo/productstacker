@@ -18,13 +18,10 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = @stack.products.new(product_params)
-
-    if @product.save
-      redirect_to stack_product_url(@stack, @product), notice: "Product was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    # async logic
+    link = params[:product][:link].strip
+    ProductImportJob.perform_later(link, @stack.id)
+    redirect_to stack_path(@stack), notice: "Product was successfully created."
   end
 
   def update
